@@ -1,0 +1,329 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.nav-ul li {
+  display: inline-block;
+  padding: 10px;
+}
+
+.nav-ul {
+  padding: 5px;
+  margin: 0;
+  background-color: rgb(34, 189, 255);
+  margin-bottom: 30px;
+
+}
+
+.nav-ul li a {
+  color: rgb(255, 255, 255);
+}
+
+.nav-right {
+  text-align: right;
+}
+
+.logo {
+  width: 55px;
+  float: left;
+  border-radius: 50%;
+  margin-top: 5px;
+  margin-left: 20px;
+  margin-right: 10px;
+
+}
+
+
+
+
+
+
+/* Detail css */
+
+
+
+
+
+.mainbox {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
+
+}
+
+.guide {
+  color: #004992;
+  margin-top: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-style: italic;
+}
+
+.guidelink {
+  color: rgb(255, 57, 156);
+}
+
+.errors {
+  color: rgb(255, 3, 3);
+  margin-bottom: 20px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.mainbox h1 {
+  color: #0065c9;
+  margin-bottom: 20px;
+}
+
+.mainbox2 h4 {
+  color: #004992;
+  font-weight: 100;
+}
+
+.mainbox2 input {
+  width: 350px;
+  margin-bottom: 20px;
+  height: 34px;
+  font-size: 16px;
+  padding-left: 10px;
+}
+
+.mainbox2 input:hover {
+  border: 2px solid black;
+  transition: 1s;
+}
+
+.mainbox22 h4 {
+  color: #004992;
+  font-weight: 100;
+}
+
+.mainbox22 input {
+  width: 350px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.button {
+  width: 350px;
+  height: 34px;
+  font-size: 16px;
+  border-radius: 10px;
+  background: #4B4B4B;
+  color: white;
+}
+
+.button:hover {
+  background-color: #5a5a5a;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.mainbox img {
+  width: 500px;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  margin-top: 200px;
+  right: 0;
+}
+
+.mainbox2 input::placeholder {
+  color: #25252584;
+  font-size: 10px;
+
+  padding-left: 5px;
+}
+
+
+
+/* edit page */
+
+
+
+
+.editpage {
+  display: flex;
+  margin: auto;
+  align-items: center;
+  flex-direction: column;
+}
+
+textarea {
+  width: 650px;
+  height: 450px;
+  font-size: 18px;
+  padding: 16px;
+  border: 4px solid rgb(0, 101, 147);
+  margin-bottom: 10px;
+  color: #4B4B4B;
+
+}
+
+.editpage h1 {
+  color: #004992;
+  margin: 20px;
+}
+
+
+
+
+
+
+/* homepage css */
+
+
+
+
+
+.mainheading {
+  color: #0628D9;
+  font-size: 78px;
+  margin-top: 90px;
+  margin-left: 240px;
+  font-style: normal;
+  font-weight: 540;
+  line-height: normal;
+}
+
+.mainheading2 {
+  color: #014ab9;
+  font-size: 78px;
+  margin-left: 240px;
+  font-style: normal;
+  font-weight: 540;
+  line-height: normal;
+}
+
+.mainheading3 {
+  color: #000;
+  font-size: 38px;
+  margin-left: 240px;
+  font-weight: 520;
+  margin-top: 40px;
+  line-height: normal;
+  margin-bottom: 10px;
+}
+
+.mainheading4 {
+  margin-top: 10px;
+  color: #000;
+  font-size: 38px;
+  margin-left: 240px;
+  font-weight: 520;
+  margin-bottom: 100px;
+  line-height: normal;
+}
+
+.mainheading5 {
+  font-size: 32px;
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+
+}
+
+.layout {
+  display: flex;
+  width: 215px;
+  margin-left: 240px;
+  border-radius: 10px;
+  color: rgb(255, 255, 255);
+  height: 34px;
+  background-color: #005ab5;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+
+.image {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  width: 624px;
+  left: 740px;
+  margin-top: 130px;
+  flex-shrink: 0;
+}
+
+
+
+
+/* Resume page Editing */
+
+.pagebox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  width: 60%;
+  margin-bottom: 30px;
+}
+.pagebox h1{
+  font-style: italic;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #005ab5;
+}
+
+.clbox {
+  border: 4px solid #0078f0;
+  
+  padding-bottom: 10px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+.clbox h2{
+  text-align: center;
+  font-size: 34px;
+  font-family:  sans-serif;
+  background-color: #0078f0;
+  color: rgb(255, 255, 255);
+  padding: 8px;
+}
+.clbox h3{
+  text-align: center;
+  font-size: 20px;
+  font-family:  sans-serif;
+  background-color: #002953;
+  color: rgb(255, 255, 255);
+  padding: 8px;
+}
+.rightaddress{
+  margin-top: 20px;
+  margin-right: 20px;
+}
+.rightaddress h2{
+  text-align: right;
+  font-size: 14px;
+  padding: 4px;
+  color: #002953;
+  background-color: rgba(139, 69, 19, 0);
+}
+
+.clcontentbox h3{
+ text-align: left;
+ color: #002953;
+ background-color: #25252500;
+ padding-bottom: 10px;
+ margin-left: 10px;
+ font-size: 24px;
+}
+.clcontentbox h4{
+  margin: 14px;
+  font-size: 16px;
+  font-family:  sans-serif;
+  font-weight: 400;
+  line-height: 25px;
+}
+.clh5{
+  margin: 14px;
+  margin-top: 18px;
+  font-size: 20px;
+  font-family:  sans-serif;
+  color: #002953;
+}
+.clh5 h5{
+  margin-bottom: 10px;
+}
