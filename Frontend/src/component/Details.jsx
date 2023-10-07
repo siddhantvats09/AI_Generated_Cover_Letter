@@ -2,8 +2,13 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { setdata } from '../slice/Dataslice'
+import Bard from 'bard-ai'
+import axios from 'axios'
+import { addcontent } from '../slice/Contentslice'
 
 const Details = () => {
+
+
 
   const [name, setname] = useState('')
   const [email, setemail] = useState('')
@@ -17,10 +22,10 @@ const Details = () => {
   const [maxword, setmaxword] = useState(500)
   const [anything, setanything] = useState('')
   const [softskill, setsoftskill] = useState('')
-  
+  const [messages, setMessages] = useState([]);
   const navigate = useNavigate()
-  const dispatch=useDispatch()
-  
+  const dispatch = useDispatch()
+
 
   useEffect(() => {
 
@@ -30,27 +35,46 @@ const Details = () => {
       navigate('/')
     }
   })
-  
-  const proceed = () => {
-    const collection={name:name,contact:contact,email:email,domain:domain,portfolio:portfolio,portfolio2:portfolio2,city:city}
+
+  const proceed = async () => {
+    const collection = { name: name, contact: contact, email: email, domain: domain, portfolio: portfolio, portfolio2: portfolio2, city: city }
     localStorage.removeItem('collect')
-    localStorage.setItem('collect',JSON.stringify(collection))
+    localStorage.setItem('collect', JSON.stringify(collection))
     //console.log(collection)
     setmaxword(max)
-    if(max>500){
+    if (max > 500) {
       setmaxword(490)
     }
-    else{
+    else {
       setmaxword(max)
     }
-    // const datas=''
-    // dispatch(setdata(datas))
-    const data= `write a cover letter for ${domain} & have Skilled in these technologies like ${skills} . whose Soft Skills & other Quelities are ${softskill} and These Lines in addition ${anything} . Length of cover letter would be ${maxword} `
+    const data = `write a cover letter for ${domain} & have Skilled in these technologies like ${skills} . whose Soft Skills & other Quelities are ${softskill} and These Lines in addition as skills and eleborate it ${anything} . Length of cover letter would be ${maxword} `
     // dispatch(setdata(data))
-     navigate('/edit')
-    console.log("your data",data)
+
+
+
+    if (data.trim() === '') return;
+
+    const newMessages = [...messages, { role: 'user', content: data }];
+    setMessages(newMessages);
+
+
+    try {
+      const response = await axios.post('http://localhost:3000/chat', { messages: newMessages });
+
+      const botReply = response.data.message.content;
+
+      setMessages([...newMessages, { role: 'bot', content: botReply }]);
+      dispatch(addcontent(botReply))
+    } catch (error) {
+      console.error('Error:', error.response ? error.response.data : error.message);
+    }
+    console.log("your data", data)
+    navigate('/edit')
+
+
   }
-  
+
 
   return (
     <>

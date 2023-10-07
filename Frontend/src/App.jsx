@@ -11,6 +11,7 @@ import Home from './component/Home';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Login from './component/Login';
 import Signup from './component/Signup';
+import Test from './component/Test';
 
 function App() {
   
@@ -24,6 +25,7 @@ function App() {
       <Route path='/details' element={<Details/>}/>
       <Route path='/edit' element={<Edit/>}/>
       <Route path='/page' element={<Pageedit/>}/>
+      <Route path='/test' element={<Test/>}/>
     </Routes>
     </BrowserRouter>
   )

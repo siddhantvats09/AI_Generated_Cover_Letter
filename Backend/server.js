@@ -46,3 +46,41 @@ app.post('/login', async (req, res) => {
         res.send({ result: 'Result Not Found' })
     }
 })
+
+
+
+
+
+
+
+
+const bodyParser = require('body-parser');
+const axios = require('axios')
+
+
+app.use(bodyParser.json());
+
+const OPENAI_API_KEY = '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';  // Replace with your actual API key
+
+app.post('/chat', async (req, res) => {
+  const { messages } = req.body;
+
+  try {
+    const response = await axios.post('https://api.openai.com/v1/chat/completions', {
+      messages,
+      model: 'gpt-3.5-turbo',
+    }, {
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${OPENAI_API_KEY}`
+      }
+    });
+
+    res.json({ message: response.data.choices[0].message });
+  } catch (error) {
+    console.error('Error:', error.response ? error.response.data : error.message);
+    res.status(500).send('Something went wrong');
+  }
+});
+
+

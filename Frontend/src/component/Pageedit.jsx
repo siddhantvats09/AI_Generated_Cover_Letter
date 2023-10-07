@@ -75,7 +75,7 @@ const Pageedit = () => {
           <h3>Dear Hiring Manager ,</h3>
           {data ? <h4>{data}</h4> : <h4>Content Of Cover Letter</h4>}
          <div className="clh5">
-         <h5>Sincerly</h5>
+         <h5>Sincerely</h5>
           {name ? <h5>{name}</h5> : <h3>Your Name</h3>}
          </div>
         </div>
